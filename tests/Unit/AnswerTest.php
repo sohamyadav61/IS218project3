@@ -6,7 +6,9 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class QuestionTest extends TestCase
+
+
+class AnswerTest extends TestCase
 {
     /**
      * A basic test example.
@@ -19,7 +21,10 @@ class QuestionTest extends TestCase
         $user->save();
         $question = factory(\App\Question::class)->make();
         $question->user()->associate($user);
-        $this->assertTrue($question->save());
+        $question->save();
+        $answer = factory(\App\Answer::class)->make();
+        $answer->user()->associate($user);
+        $answer->question()->associate($question);
+        $this->assertTrue($answer->save());
     }
 }
-

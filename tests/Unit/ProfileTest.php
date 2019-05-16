@@ -9,11 +9,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class profileTest extends TestCase
 {
     /**
-     * A basic unit test example.
+     * A basic test example.
      *
      * @return void
      */
-
     public function testSave()
     {
         $user = factory(\App\User::class)->make();
