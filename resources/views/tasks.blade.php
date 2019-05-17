@@ -50,6 +50,13 @@
                         @foreach($tasks as $task)
                             <tr>
                                 <td>{{$task->name}}</td>
+                                <td>
+                                    <form action ="{{url('task/'.$task->id)}}" method = "post">
+                                        <button>type= 'submit' class="btn btn-danger"> Delete </button>
+                                        {{method_field('DELETE')}}
+                                        {{csrf_field()}}
+                                    </form>
+                                </td>
                             </tr>
 
                         @endforeach
