@@ -34,4 +34,35 @@
     </div>
 
     <!-- TODO: Current Tasks -->
+    @if ($task-> count())
+        <div class="panel panel=default">
+            <div panel class="panel-heading">
+                Current tasks
+
+            </div>
+            <div class ="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <th>Task</th>
+                        <th>&nbsp;</th>
+                    </thead>
+                    <tbody>
+                        @foreach($tasks as $task)
+                            <tr>
+                                <td>{{$task->name}}</td>
+                            </tr>
+
+                        @endforeach
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+        </div>
+
+
+
+    @endif
 @endsection
