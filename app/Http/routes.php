@@ -25,7 +25,11 @@ Route::post('/task', function (Request $request) {
             ->withErrors($validator);
     }
 
-    // Create The Task...
+    $task = new Task;
+    $task->name = $request ->name;
+    $task-> save();
+    dd($task);
+
 });
 
 /**
