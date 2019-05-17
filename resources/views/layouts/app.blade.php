@@ -88,12 +88,22 @@
         </div>
     </nav>
 
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <!-- Navbar Contents -->
+        </nav>
+    </div>
+
     <main class="py-4">
         <div class="col-12">
             @include('flash.error')
             @include('flash.messages')
             @include('flash.status')
         </div>
+
+
+
+        @yield('content')
         @yield('content')
     </main>
 </div>
