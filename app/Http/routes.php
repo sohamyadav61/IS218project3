@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
  * Display All Tasks
  */
 Route::get('/', function () {
-    return view('tasks.blade.php');
+
+    $task = Task::orderby('created_at', 'asc')->get;
+    return view('tasks.blade.php', [
+        'tasks' => $tasks,
+    ]);
 
 });
 
